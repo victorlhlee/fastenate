@@ -1,5 +1,284 @@
-body {
-  h1 {
-    background-color: #fff;
+@import "partials/settings";
+@import "partials/reset";
+
+// global variables
+
+$dark-gray: #2C2C2E;
+$light-gray: #5E5F62;
+$date-color-gray: #97989C;
+$hover-color: #F28218;
+
+body{
+  background-image: url(../assets/bg.jpg);
+  font-family: Lato, Oswald, sans-serif;
+}
+
+h2{
+  font-size: 24px;
+  margin-top: 7px;
+  line-height: 1.1em;
+}
+
+.top{
+  background: white;
+  position: relative;
+}
+
+.description{ 
+  font-size: 17px;
+  font-weight: 100;
+  line-height: 1.4em;
+}
+
+.nav{
+  background: $dark-gray;
+  height: 40px;
+  
+  ul{
+    list-style-type: none;
+    text-align: center;
+    padding: 8px;
+    background: $dark-gray;
+    word-spacing: 2px;
+  
+  
+    li{
+      text-transform: uppercase;
+      display: inline;
+      color: $light-gray; 
+      font-size: 18px;  
+      font-weight: 400;
+      letter-spacing: 1px;
+      
+
+    &:before{
+        content: " ";
+        width: 5px;
+        height: 5px;
+        display: inline-block;
+        background-color: $light-gray;
+        border-radius: 100%;
+        position: relative;
+        top: -4px;
+        margin-right: 8px;
+        margin-left: 8px;
+      }
+      
+      &:first-child:before{
+              display: none;
+      }  
+
+        
+      a{
+        color: $light-gray;
+        
+        &:link{
+          text-decoration: none;
+        }
+
+    &:hover{
+      color: $hover-color;
+      }
+      }
+    }
   }
 }
+
+.random{
+   @media #{$small-only}{
+    float: left;
+    width: 30%;
+    height: 50px;
+  }
+}
+
+.boards{
+  @media #{$small-only}{
+    height: 30px;
+    width: 30%;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+  }
+}
+
+.app{
+  @media #{$small-only}{
+  float: right;
+  width: 30%;
+  height: 50px;
+  }
+}
+
+.logo{
+  background-image: url(../assets/logo.svg);
+  background-repeat: no-repeat;
+
+  @media #{$small-only}{
+    height: 50px;
+
+  }
+}
+
+.wings{
+  margin: auto;
+
+  @media #{$medium-up}{
+    background-image: url(../assets/header_bg.svg);
+    background-repeat: no-repeat;
+    height: 50px;
+    background-position: center;
+  }
+}
+
+
+.logo{
+  @media #{$medium-up}{
+    background-image: url(../assets/logo.svg);
+      background-repeat: no-repeat;
+      height: 50px;
+      background-position: center;
+  }
+}  
+
+
+main{
+   margin-top: 15px;
+}
+
+.sign{
+    background-color: red;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    text-decoration: none;
+    height: 30px;
+    width: 30px;
+    color: white;
+    border: 1px solid black; 
+}
+
+
+
+.container{
+  max-width: 833px; 
+  margin: auto;
+}
+
+.box{
+  background: white;
+  float: left;
+  max-width: 400px;
+  width: 48%;
+  display: block;
+  height: 465px;
+  margin: 0 1% 20px;
+  padding: 25px;
+  box-sizing: border-box;
+
+  @media #{$large-up}{
+   &:hover{
+     border: 3px solid $hover-color;
+   }
+ }
+}
+
+.boximage{
+  background: green;
+  background-image: url('http://placekitten.com/g/200/300');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  background-position: center;
+  width: 100%;
+
+
+ // @media #{$small-only}{
+ //    height: 250px;
+    
+ // }
+
+ // @media #{$medium-up}{
+ //    height: 168px;
+ //  }  
+}
+
+.who{
+  color: $date-color-gray;
+  line-height: 2em;
+}
+
+.date{
+  color: $date-color-gray;
+
+  &.date:before{
+    content: " ";
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    background-color: $light-gray;
+    border-radius: 100%;
+    position: relative;
+    top: -4px;
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+}
+
+.views{
+  color: $date-color-gray;
+
+  &.views:before{
+    content: " ";
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    background-color: $light-gray;
+    border-radius: 100%;
+    position: relative;
+    top: -4px;
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+}
+
+.footer{
+  background: $dark-gray;
+  height: 50px;
+
+   @media #{$small-only}{
+    display: none;
+   }
+}
+
+.socialwrapper{
+  text-align: center;
+  padding: 12px;
+
+}
+a.icon{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  
+  span{
+    display: none;
+  }
+
+  &.fb{
+    background-image: url(../assets/facebook_grey.svg);
+  }
+
+  &.ig{
+    background-image: url(../assets/instagram_grey.svg);
+
+    &:hover{
+      background-image: url(../assets/instagram_orange.svg);
+    }
+  }      
+}
+
+
