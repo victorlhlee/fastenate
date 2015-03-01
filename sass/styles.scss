@@ -7,16 +7,22 @@ $dark-gray: #2C2C2E;
 $light-gray: #5E5F62;
 $date-color-gray: #97989C;
 $hover-color: #F28218;
+$plus-color: #9F3418;
 
 body{
   background-image: url(../assets/bg.jpg);
-  font-family: Lato, Oswald, sans-serif;
+  font-family: "Lato", sans-serif;
+}
+h1, h2, h3, h4, h5, h6{
+  font-family: "Oswald", sans-serif;
 }
 
 h2{
   font-size: 24px;
   margin-top: 7px;
-  line-height: 1.1em;
+  line-height: 1.3em;
+  max-height: 2.6em;
+  overflow: hidden;
 }
 
 .top{
@@ -40,76 +46,69 @@ h2{
     padding: 8px;
     background: $dark-gray;
     word-spacing: 2px;
-  
+
+    @media #{$small-only}{
+      padding: 0;
+    }
   
     li{
+      font-family: "Oswald", sans-serif;
       text-transform: uppercase;
       display: inline;
       color: $light-gray; 
       font-size: 18px;  
       font-weight: 400;
       letter-spacing: 1px;
-      
+      line-height: 2.5;
 
-    &:before{
-        content: " ";
-        width: 5px;
-        height: 5px;
+
+      @media #{$small-only}{
+        width: 32%;
         display: inline-block;
-        background-color: $light-gray;
-        border-radius: 100%;
-        position: relative;
-        top: -4px;
-        margin-right: 8px;
-        margin-left: 8px;
+        box-sizing: border-box;
+
+      }  
+      
+      @media #{$medium-up}{
+
+        &:before{
+          content: " ";
+          width: 5px;
+          height: 5px;
+          display: inline-block;
+          background-color: $light-gray;
+          border-radius: 100%;
+          position: relative;
+          top: -4px;
+          margin-right: 8px;
+          margin-left: 8px;
+        }
+          
+        &:first-child:before{
+          display: none;
+        }   
       }
       
-      &:first-child:before{
-              display: none;
-      }  
-
-        
       a{
         color: $light-gray;
-        
-        &:link{
-          text-decoration: none;
-        }
+        text-decoration: none;
 
-    &:hover{
-      color: $hover-color;
-      }
-      }
-    }
-  }
-}
-
-.random{
-   @media #{$small-only}{
-    float: left;
-    width: 30%;
-    height: 50px;
-  }
-}
+        &:hover{
+          color: $hover-color;
+        }//hover
+      } 
+    }//li
+  }//ul
+} //nav
 
 .boards{
   @media #{$small-only}{
-    height: 30px;
-    width: 30%;
-    padding-left: 30px;
-    padding-right: 30px;
+    // height: 30px;
     border-left: 1px solid white;
     border-right: 1px solid white;
   }
 }
 
-.app{
-  @media #{$small-only}{
-  float: right;
-  width: 30%;
-  height: 50px;
-  }
-}
 
 .logo{
   background-image: url(../assets/logo.svg);
@@ -147,24 +146,37 @@ main{
    margin-top: 15px;
 }
 
-.sign{
-    background-color: red;
+
+a.sign{
+    background-color: white;
     display: block;
     position: absolute;
     top: 10px;
     right: 0;
     text-decoration: none;
-    height: 30px;
-    width: 30px;
-    color: white;
-    border: 1px solid black; 
-}
+    font-size: 35px;
+    font-weight: bold;
+    color: $plus-color;
+    margin-right: 20px;
+    border: 2px solid $hover-color;
+    padding: 0px 3px 3px;
+    line-height: 22px;
 
+    &:hover{
+      background-color: $hover-color;
+      color: white;
+    }
+}
 
 
 .container{
   max-width: 833px; 
   margin: auto;
+  margin-top: 25px;
+
+  @media #{$medium-up}{
+    margin-top: 40px;
+  }
 }
 
 .box{
@@ -177,12 +189,20 @@ main{
   margin: 0 1% 20px;
   padding: 25px;
   box-sizing: border-box;
+  border: 3px solid white;
 
   @media #{$large-up}{
-   &:hover{
-     border: 3px solid $hover-color;
-   }
- }
+    &:hover{
+      border: 3px solid $hover-color;
+    }
+  }  
+
+  @media #{$small-only}{
+    width: 100%;
+    float: none;
+    margin: auto;
+    margin-bottom: 15px;
+  } 
 }
 
 .boximage{
@@ -193,16 +213,6 @@ main{
   height: 200px;
   background-position: center;
   width: 100%;
-
-
- // @media #{$small-only}{
- //    height: 250px;
-    
- // }
-
- // @media #{$medium-up}{
- //    height: 168px;
- //  }  
 }
 
 .who{
